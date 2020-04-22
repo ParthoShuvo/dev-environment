@@ -57,6 +57,9 @@
     3. **nano**
     4. **Datagrip 2016.3.4**
     5. **IntelliJ Idea 2017.1.6**
+    6. **Sublime Text** 
+        - *install* `sudo snap install sublime-text --classic`
+        - *run in terminal* `subl $file`
 - #### Language & Environments
     1. **Node.js**
         - *Run following commands*

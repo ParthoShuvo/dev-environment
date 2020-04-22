@@ -108,3 +108,9 @@
         - `sudo apt update && sudo apt install qbittorrent`
     5. **git hooks**
         - **Angular (pre-push)** [file](https://gist.github.com/ParthoShuvo/3a3ae1a949e1c13af2db03cc93a200fc)
+    6. **inotify-tools** `sudo apt-get install inotify-tools`
+    6. **youtube-dl** [follow](https://github.com/ytdl-org/youtube-dl)
+        - *install* `sudo snap install youtube-dl`
+        - */etc/youtubel-dl.conf* [file](https://gist.github.com/ParthoShuvo/d3954c9424b7e0f5ca5952a058d51517)
+        - *[optional] watcher to move downloaded file to new location* [file](https://gist.github.com/ParthoShuvo/98a30413d2bdddeb80d1379747c49bac)
+            

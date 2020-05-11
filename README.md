@@ -91,7 +91,9 @@
     1. **curl** `sudo apt install curl`
     2. **Postman** `sudo snap install postman`
     3. **htop** `sudo snap install htop`
-    4. **Docker** follow [link](https://docs.docker.com/engine/install/ubuntu/)
+    4. **Docker**
+        - *Run* `sudo snap install docker`
+        - For without root permission follow [link](https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue) 
 - #### Document Reader
     1. **Foxit Reader** [link](http://ubuntuhandbook.org/index.php/2015/09/install-foxit-reader-in-ubuntu/)
 - #### Miscellaneous

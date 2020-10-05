@@ -115,5 +115,9 @@
         - *install* `sudo snap install youtube-dl`
         - */etc/youtubel-dl.conf* [file](https://gist.github.com/ParthoShuvo/d3954c9424b7e0f5ca5952a058d51517)
         - *[optional] watcher to move downloaded file to new location* [file](https://gist.github.com/ParthoShuvo/98a30413d2bdddeb80d1379747c49bac)
+- #### Scripts
+    1. **Execute sudo without password**
+        - open `sudo subl /etc/sudoers`
+        - add line `shuvojit ALL=(ALL) NOPASSWD: ALL` at the EOF
         
             

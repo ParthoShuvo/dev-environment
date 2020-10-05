@@ -81,6 +81,8 @@
     7. **Go 1.13** 
         - *install* follow [link](https://linuxize.com/post/how-to-install-go-on-ubuntu-18-04/)
         - *VSCode Debugger* [launch.json](https://gist.github.com/ParthoShuvo/dec4add75cb67b88b38c7035e7ee0c79)
+- #### Database
+    1. **MySQL - 8** [link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-quickstart)
 - #### Communication
     1. **Skype** `sudo snap install skype --classic`
     2. **Google Hangouts**

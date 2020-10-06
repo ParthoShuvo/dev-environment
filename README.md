@@ -8,7 +8,9 @@
         3. `git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh`
         4. `cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc`
         5. `chsh -s /bin/zsh`
-        6. [More](https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4)
+        6. _More_
+            - https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4
+            - https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/
         7. *Nerd Fonts* follow [link](https://github.com/ryanoasis/nerd-fonts#option-6-ad-hoc-curl-download)
         
 - #### Browser

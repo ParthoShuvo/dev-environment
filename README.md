@@ -128,5 +128,6 @@
     1. **Execute sudo without password**
         - open `sudo subl /etc/sudoers`
         - add line `shuvojit ALL=(ALL) NOPASSWD: ALL` at the EOF
-        
+- #### VM
+    1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
             

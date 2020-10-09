@@ -81,6 +81,12 @@
     7. **Go 1.13** 
         - *install* follow [link](https://linuxize.com/post/how-to-install-go-on-ubuntu-18-04/)
         - *VSCode Debugger* [launch.json](https://gist.github.com/ParthoShuvo/dec4add75cb67b88b38c7035e7ee0c79)
+    8. **Python3** 
+       - **install**
+            ```bash
+            sudo apt install python3 python3-pip -y
+            ```
+       - **create virtual env** [_follow_](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
 - #### Database
     1. **MySQL - 8** 
         - **install** [link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-quickstart)

@@ -122,6 +122,17 @@
         - *[optional] watcher to move downloaded file to new location* [file](https://gist.github.com/ParthoShuvo/98a30413d2bdddeb80d1379747c49bac)
     8. **fast** - CLI internet speed test
         - *install* `sudo snap install fast`
+- #### Microsoft Office -2013
+    + **install playonlinux** <br/>
+        ```bash
+        sudo apt install playonlinux
+        ```
+    + **install winbind** <br/>
+        ```bash
+        sudo apt install winbind -y
+        ```
+    + **download microsoft windows-2013** [_from_](https://drive.google.com/file/d/1v2TdcR99TcjZyIUbKgeP-qvsUxZjRvQj/view?usp=sharing)
+    + **follow [_this_](https://www.youtube.com/watch?v=Vf8zr096mYQ&ab_channel=DistroTester)**
 - #### Scripts
     1. **Execute sudo without password**
         - open `sudo subl /etc/sudoers`

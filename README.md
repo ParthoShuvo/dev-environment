@@ -12,6 +12,9 @@
             - https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4
             - https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/
         7. *Nerd Fonts* follow [link](https://github.com/ryanoasis/nerd-fonts#option-6-ad-hoc-curl-download)
+        8. ___Current ZSH Setup___
+           1. [Config][2]
+           2. [Current zshrc file][3]
         
 - #### Browser
     1. **Google Chrome - Latest**
@@ -48,6 +51,10 @@
             8. Emmet
             9. docs-markdown
             10. Go
+        - [*Extension installation script*][4]
+           - _**Make sure**_ you have the code command line installed
+           - Make executable: `chmod +x ./my_vscode_extensions.sh`
+           - Run script: `./my_vscode_extensions.sh`
         - *Themes*
             1. Winter is coming (Dark)
         - *Icons*
@@ -149,3 +156,6 @@
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
             
 [1]: https://drive.google.com/file/d/1sRXrfgyVo2qbxCgmAup3GDtXMxQyBK_D/view?usp=sharing
+[2]: https://github.com/ParthoShuvo/dev-environment/blob/master/zsh
+[3]: https://github.com/ParthoShuvo/dev-environment/blob/master/zsh/zshrc
+[4]: https://github.com/ParthoShuvo/dev-environment/blob/master/my_vscode_extensions.sh

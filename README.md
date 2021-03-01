@@ -52,7 +52,7 @@
             9. docs-markdown
             10. Go
         - [*Extension installation script*][4]
-           - _**Make sure**_ you have the code command line installed
+           - _**Make sure**_ you have the ``code`` command line installed
            - Make executable: `chmod +x ./my_vscode_extensions.sh`
            - Run script: `./my_vscode_extensions.sh`
         - *Themes*

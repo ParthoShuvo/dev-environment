@@ -5,7 +5,9 @@
 + Open `./zshrc` file. **Run** `cd ./zshrc`
 
 ### PATH Environment
-+ ```bash
++ Add following PATH env
+  
+  ```bash
   # PATH Environment
   # Golang
   export GOROOT="/usr/local/go"

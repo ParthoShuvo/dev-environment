@@ -148,4 +148,4 @@
 - #### VM
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
             
-[1] https://drive.google.com/file/d/1sRXrfgyVo2qbxCgmAup3GDtXMxQyBK_D/view?usp=sharing
+[1]: https://drive.google.com/file/d/1sRXrfgyVo2qbxCgmAup3GDtXMxQyBK_D/view?usp=sharing

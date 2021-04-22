@@ -37,6 +37,10 @@
             - *User email*  `git config --global user.name "${USER_EMAIL}"`
     2. **SSH Key**
         - *generate new* `ssh-keygen -t rsa -b 4096 -C "email@example.com"`
+    3. **GitKraken**
+        - *install* follow [this][5]
+        - *patcher* follow [this][6]
+    
 - #### IDE/Text-Editor
     1. **VS Code** 
         - *install* `sudo snap install code --classic`
@@ -154,7 +158,9 @@
         - add line `shuvojit ALL=(ALL) NOPASSWD: ALL` at the EOF
 - #### VM
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
-            
+
+[6]: https://github.com/5cr1pt/GitCracken
+[5]: https://gist.github.com/ParthoShuvo/f5e716989103c7db1b8c7a38fc3b243e
 [1]: https://drive.google.com/file/d/1sRXrfgyVo2qbxCgmAup3GDtXMxQyBK_D/view?usp=sharing
 [2]: https://github.com/ParthoShuvo/dev-environment/blob/master/zsh
 [3]: https://github.com/ParthoShuvo/dev-environment/blob/master/zsh/zshrc

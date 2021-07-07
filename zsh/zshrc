@@ -109,12 +109,16 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 # JAVA 8
 export JAVA_HOME=/opt/jdk
+export PATH=${JAVA_HOME}/bin:${PATH}
 export JRE_HOME=/opt/jdk/jre
+export PATH=${JRE_HOME}/bin:${PATH}
 export M2_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}
 # python
 export PY_VIRTUAL_ENV="/home/shuvojit/.local/bin"
 export PATH=$PATH:$PY_VIRTUAL_ENV
+# aws eb cli
+export PATH="/home/shuvojit/.ebcli-virtual-env/executables:$PATH"
 # sls environments
 export SLS_DEBUG=*
 # jetbrains agent
@@ -143,7 +147,10 @@ alias azure-test-user="cat $HOME/Desktop/IBFD-KAZ/azure-ad-test-users.json"
 # scripts
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
+alias killport='function _killp(){ lsof -nti:$1 | xargs kill -9 };_killp'
 # angular
+alias run-trp-prod-ssl="ng build --prod && mv dist/trp/assets/etc dist/trp/ && http-server dist/trp --port=4200 --proxy https://dev-research.ibfd.org --ssl --cert ssl/server.crt --key ssl/server.key"
+alias run-trp-prod="ng build --prod && mv dist/trp/assets/etc dist/trp/ && http-server dist/trp --port=4200 --proxy https://dev-research.ibfd.org"
 alias run-ng-build="ng build"
 alias run-ng-build-prod="ng build --prod"
 alias run-ng-lint="ng lint"
@@ -153,8 +160,9 @@ alias run-ng-proxy="ng serve --host=shuvojit.ibfd.org --port=4200 --proxy-config
 alias run-ng-proxy-export="ng serve --host=0.0.0.0 --port=4200 --proxy-config proxy-conf.json"
 alias run-ng-lint-prod-test="ng lint && ng build --prod && ng test"
 alias run-packagr="npm run packagr"
-alias run-trp="ng serve --host=shuvojit.ibfd.org --port=8080 --proxy-config proxy-conf.json"
+alias run-trp="ng serve --host=shuvojit.ibfd.org --port=4200 --proxy-config proxy-conf.json"
 alias run-ng="ng serve --host=shuvojit.ibfd.org --port=4200"
+alias run-nerui="ng serve --port=4200 --base-href=/nerui --proxy-config=proxy-conf.json"
 # golang
 alias run-go-app="chmod +x run.sh && ./run.sh local"
 alias run-go-app-dev="chmod +x run.sh && ./run.sh dev"
@@ -197,3 +205,21 @@ alias chrome-cors='google-chrome --args --user-data-dir="/tmp/chrome_dev_test" -
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/shuvojit/Desktop/Learning/serverless/angularSeo/node_modules/tabtab/.completions/sls.zsh ]] && . /home/shuvojit/Desktop/Learning/serverless/angularSeo/node_modules/tabtab/.completions/sls.zsh
+
+# aws-cli auto-complete
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+compinit
+complete -C '/usr/local/bin/aws_completer' aws
+
+#AWS CLI
+export AWS_PROFILE=Shuvojit
+
+# AWS RDS
+export AWS_RDS_USERNAME=Nirvana
+export AWS_RDS_PASSWORD=hbosNizhas4%
+export AWS_SSH_LOCATION='103.217.111.148/32'
+
+# EB CLI
+alias update-eb-cli="python aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py"
+export AWS_EB_PROFILE=Shuvojit

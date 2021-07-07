@@ -100,6 +100,8 @@
             sudo apt install python3 python3-pip -y
             ```
        - **create virtual env** [_follow_](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
+     9. [**PHP-7 and Composer**][7]
+     
 - #### Database
     1. **MySQL - 8** 
         - **install** [link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-quickstart)
@@ -159,6 +161,8 @@
 - #### VM
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
 
+
+[7]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04
 [6]: https://github.com/5cr1pt/GitCracken
 [5]: https://gist.github.com/ParthoShuvo/f5e716989103c7db1b8c7a38fc3b243e
 [1]: https://drive.google.com/file/d/1sRXrfgyVo2qbxCgmAup3GDtXMxQyBK_D/view?usp=sharing

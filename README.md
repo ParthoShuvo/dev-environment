@@ -2,6 +2,11 @@
 
 ## Ubuntu 20.04 LTS
 
+- ### Ansible
+  
+  - [What is ansible][9]
+  - To install follow [this][8]
+
 - ### oh-my-zsh
 
   - **Run below commands**
@@ -191,6 +196,8 @@
 
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
 
+[9]: https://www.youtube.com/watch?v=1id6ERvfozo&ab_channel=TechWorldwithNana
+[8]: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu
 [7]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04
 [6]: https://github.com/5cr1pt/GitCracken
 [5]: https://gist.github.com/ParthoShuvo/f5e716989103c7db1b8c7a38fc3b243e

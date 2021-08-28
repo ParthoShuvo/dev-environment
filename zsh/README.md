@@ -1,10 +1,11 @@
-## ZSH configuration
+# ZSH configuration
 
+## Setup
 
-### Setup
 + Open `./zshrc` file. **Run** `cd ./zshrc`
 
 ### PATH Environment
+
 + Add following PATH env
   
   ```bash
@@ -26,7 +27,9 @@
   ```
 
 ### Aliasing
+
 + Add following aliases at EOF
+
    ```bash
     # aliasing
     # file

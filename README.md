@@ -1,48 +1,54 @@
-# Current development environment details with tools & setups 
+# Current development environment details with tools & setups
 
 ## Ubuntu 20.04 LTS
-- #### oh-my-zsh
-    - **Run below commands**
+
+- ### oh-my-zsh
+
+  - **Run below commands**
         1. `sudo apt install zsh`
         2. `sudo apt-get install powerline fonts-powerline`
         3. `git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh`
         4. `cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc`
         5. `chsh -s /bin/zsh`
         6. _More_
-            - https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4
-            - https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/
+            - <https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4>
+            - <https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/>
         7. *Nerd Fonts* follow [link](https://github.com/ryanoasis/nerd-fonts#option-6-ad-hoc-curl-download)
         8. ___Current ZSH Setup___
            1. [Config][2]
            2. [Current zshrc file][3]
-        
-- #### Browser
+
+- ### Browser
+
     1. **Google Chrome - Latest**
     2. **Firefox - Latest**
 
-- #### VPN 
-    1. [**Cisco any connect** ][1]
+- ### VPN
+
+    1. [**Cisco any connect**][1]
         - *installation*
             1. unzip .tar.gz file
-            1. `sudo apt install libpangox-1.0-0 libcanberra-gtk-module`
-            2. `cd ${path-to-unzipped-folder}/vpn`
-            3. `chmod +x vpn_install.sh`
-            4. `sudo ./vpn_install.sh`
+            2. `sudo apt install libpangox-1.0-0 libcanberra-gtk-module`
+            3. `cd ${path-to-unzipped-folder}/vpn`
+            4. `chmod +x vpn_install.sh`
+            5. `sudo ./vpn_install.sh`
 
-- #### VCS
-    1. **Git-2.17.1 or latest** 
+- ### VCS
+
+    1. **Git-2.17.1 or latest**
         - *install*  `sudo apt install git`
-        - *config* 
-            - *User name*  `git config --global user.name "${USER_NAME}"` 
+        - *config*
+            - *User name*  `git config --global user.name "${USER_NAME}"`
             - *User email*  `git config --global user.name "${USER_EMAIL}"`
     2. **SSH Key**
         - *generate new* `ssh-keygen -t rsa -b 4096 -C "email@example.com"`
     3. **GitKraken**
         - *install* follow [this][5]
         - *patcher* follow [this][6]
-    
-- #### IDE/Text-Editor
-    1. **VS Code** 
+
+- ### IDE/Text-Editor
+
+    1. **VS Code**
         - *install* `sudo snap install code --classic`
         - *Extensions*
             1. Angular Essentials
@@ -65,15 +71,17 @@
             1. VSCode Icons
         - *Keymap*
             1. Eclipse Keymap
-        - *Watcher size of file changes in large workspace* [link](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc) 
+        - *Watcher size of file changes in large workspace* [link](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)
     2. **gedit**
     3. **nano**
     4. **Datagrip 2016.3.4**
     5. **IntelliJ Idea 2017.1.6**
-    6. **Sublime Text** 
+    6. **Sublime Text**
         - *install* `sudo snap install sublime-text --classic`
         - *run in terminal* `subl $file`
-- #### Language & Environments
+
+- ### Language & Environments
+
     1. **Node.js**
         - *Run following commands*
             1. `curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh` > current: Node.js 12.16.2 stable
@@ -82,7 +90,7 @@
             4. `nodejs -v`
             5. `npm -v`
             6. `sudo apt install build-essential`
-    2. **angular-cli** 
+    2. **angular-cli**
         - *Run following commands*
             1. `sudo npm install -g @angular/cli`
             2. `ng version`
@@ -90,39 +98,51 @@
     4. **JAVA 8** follow [link](https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu/)
     5. **Maven 3** follow [link](https://www.vultr.com/docs/how-to-install-apache-maven-on-ubuntu-16-04)
     6. **Scala 2.13.1** `sdk install scala`
-    8. **sbt (Scala build tool)** [follow](https://www.scala-sbt.org/download.html?_ga=2.179985249.491955621.1587575220-146846830.1587499294)
-    7. **Go 1.13** 
+    7. **sbt (Scala build tool)** [follow](https://www.scala-sbt.org/download.html?_ga=2.179985249.491955621.1587575220-146846830.1587499294)
+    8. **Go 1.13**
         - *install* follow [link](https://linuxize.com/post/how-to-install-go-on-ubuntu-18-04/)
         - *VSCode Debugger* [launch.json](https://gist.github.com/ParthoShuvo/dec4add75cb67b88b38c7035e7ee0c79)
-    8. **Python3** 
+    9. **Python3**
        - **install**
+
             ```bash
             sudo apt install python3 python3-pip -y
             ```
+
        - **create virtual env** [_follow_](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
-     9. [**PHP-7 and Composer**][7]
-     
-- #### Database
-    1. **MySQL - 8** 
+    10. [**PHP-7 and Composer**][7]
+
+- ### Database
+
+    1. **MySQL - 8**
         - **install** [link](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-quickstart)
         - **workbench** [link](https://dev.mysql.com/downloads/workbench/)
-   
-- #### Communication
+
+- ### Communication
+
     1. **Skype** `sudo snap install skype --classic`
     2. **Google Hangouts**
     3. **Slack** `sudo snap install slack --classic`
-- #### Media
+
+- ### Media
+
     1. **VLC** `sudo snap install vlc`
-- #### Tools
+
+- ### Tools
+
     1. **curl** `sudo apt install curl`
     2. **Postman** `sudo snap install postman`
     3. **htop** `sudo snap install htop`
     4. **Docker**
         - *Run* `sudo snap install docker`
-        - For without root permission follow [link](https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue) 
-- #### Document Reader
+        - For without root permission follow [link](https://stackoverflow.com/questions/48957195/how-to-fix-docker-got-permission-denied-issue)
+
+- ### Document Reader
+
     1. **Foxit Reader** [link](http://ubuntuhandbook.org/index.php/2015/09/install-foxit-reader-in-ubuntu/)
-- #### Miscellaneous
+
+- ### Miscellaneous
+
     1. **tlp**
         - `sudo add-apt-repository ppa:linrunner/tlp`
         - `sudo apt-get update`
@@ -143,24 +163,33 @@
         - *[optional] watcher to move downloaded file to new location* [file](https://gist.github.com/ParthoShuvo/98a30413d2bdddeb80d1379747c49bac)
     8. **fast** - CLI internet speed test
         - *install* `sudo snap install fast`
-- #### Microsoft Office -2013
-    + **install playonlinux** <br/>
-        ```bash
-        sudo apt install playonlinux
-        ```
-    + **install winbind** <br/>
-        ```bash
-        sudo apt install winbind -y
-        ```
-    + **download microsoft windows-2013** [_from_](https://drive.google.com/file/d/1v2TdcR99TcjZyIUbKgeP-qvsUxZjRvQj/view?usp=sharing)
-    + **follow [_this_](https://www.youtube.com/watch?v=Vf8zr096mYQ&ab_channel=DistroTester)**
-- #### Scripts
+
+- ### Microsoft Office -2013
+
+  - **install playonlinux**
+
+    ```bash
+    sudo apt install playonlinux
+    ```
+
+  - **install winbind**
+
+    ```bash
+    sudo apt install winbind -y
+    ```
+
+  - **download microsoft windows-2013** [_from_](https://drive.google.com/file/d/1v2TdcR99TcjZyIUbKgeP-qvsUxZjRvQj/view?usp=sharing)
+  - **follow [_this_](https://www.youtube.com/watch?v=Vf8zr096mYQ&ab_channel=DistroTester)**
+
+- ### Scripts
+
     1. **Execute sudo without password**
         - open `sudo subl /etc/sudoers`
         - add line `shuvojit ALL=(ALL) NOPASSWD: ALL` at the EOF
-- #### VM
-    1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
 
+- ### VM
+
+    1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
 
 [7]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04
 [6]: https://github.com/5cr1pt/GitCracken

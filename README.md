@@ -1,11 +1,13 @@
-# Current development environment details with tools & setups
-
 ## Ubuntu 20.04 LTS
 
 - ### Ansible
   
   - [What is ansible][9]
   - To install follow [this][8]
+
+- ### Homebrew
+
+- Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`. For [more][15]
 
 - ### oh-my-zsh
 
@@ -15,13 +17,34 @@
         3. `git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh`
         4. `cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc`
         5. `chsh -s /bin/zsh`
-        6. _More_
+        6. Try following steps to install [PowerLevel10k][10] theme
+            - `git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k`
+            - Set the theme `ZSH_THEME="powerlevel10k/powerlevel10k"` in .zshrc file
+            - Install following [fonts][11]
+            - Run `p10k configure`
+        7. Try following to change gnome terminal
+            - Follow <https://github.com/Gogh-Co/Gogh> to install
+            - Apply Gotham theme
+        8. _More_
             - <https://dev.to/mskian/install-z-shell-oh-my-zsh-on-ubuntu-1804-lts-4cm4>
             - <https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/>
-        7. *Nerd Fonts* follow [link](https://github.com/ryanoasis/nerd-fonts#option-6-ad-hoc-curl-download)
-        8. ___Current ZSH Setup___
+        9.  *Nerd Fonts* follow [link](https://github.com/ryanoasis/nerd-fonts#option-6-ad-hoc-curl-download)
+        10. ___Current ZSH Setup___
            1. [Config][2]
            2. [Current zshrc file][3]
+        11. Install plugins
+            - git
+            - git-flow: `brew install git-flow`
+            - brew
+            - npm
+            - node
+            - history
+            - docker
+            - kubectl: [follow][12]
+            - kubectx: [follow][13]
+            - zsh-syntax-highlighting
+            - zsh-autosuggestions: follow [this][13]
+            - minikube: [follow][14]
 
 - ### Browser
 
@@ -196,6 +219,13 @@
 
     1. [**VMware Player**](https://itsfoss.com/install-vmware-player-ubuntu-1310/)
 
+[16]: https://github.com/ahmetb/kubectx
+[15]: https://brew.sh/
+[14]: https://minikube.sigs.k8s.io/docs/commands/completion/#:~:text=minikube%20shell%20completion%20for%20the%20given%20shell
+[13]: https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+[12]: https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-zsh/
+[11]: https://github.com/romkatv/powerlevel10k#:~:text=download%20these%20four%20ttf%20files
+[10]: https://github.com/romkatv/powerlevel10k#fonts
 [9]: https://www.youtube.com/watch?v=1id6ERvfozo&ab_channel=TechWorldwithNana
 [8]: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu
 [7]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04

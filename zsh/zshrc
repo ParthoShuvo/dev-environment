@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,11 +77,24 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-syntax-highlighting
+	git-flow
+	brew
+	history
 	docker
+	node
+	npm
+	kubectl
+	helm
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
+
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
+source <(minikube completion zsh)
+source /home/shuvojit/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 # User configuration
 
@@ -104,11 +124,15 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH Environment
 # Golang
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/go"
+export GOPRIVATE="bitbucket.org/shadowchef/*"
 export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 # JAVA 8
-export JAVA_HOME=/opt/jdk
+export JAVA_HOME=/opt/jdk/jdk1.8
 export PATH=${JAVA_HOME}/bin:${PATH}
 export JRE_HOME=/opt/jdk/jre
 export PATH=${JRE_HOME}/bin:${PATH}
@@ -133,20 +157,25 @@ alias edit-sudoers="sudo subl /etc/sudoers"
 alias edit-hosts="sudo subl /etc/hosts"
 alias edit-git-exclude="subl .git/info/exclude"
 # Directory
-alias cd-ibfd-kaz="$HOME/Desktop/IBFD-KAZ"
-alias cd-ibfd-kaz-client="$HOME/Desktop/IBFD-KAZ/client"
-alias cd-ibfd-kaz-server="$HOME/Desktop/IBFD-KAZ/server"
-alias cd-ibfd-kaz-driver="$HOME/Desktop/IBFD-KAZ/driver"
-alias cd-ibfd-kaz-driver-cvs="$HOME/Desktop/IBFD-KAZ/driver-cvs"
-alias cd-ibfd-kaz-doc="$HOME/Desktop/IBFD-KAZ/doc"
-alias cd-ibfd-kaz-db-local="$HOME/Desktop/IBFD-KAZ/docker-db"
+alias cd-vivasoft-klikit="$HOME/Desktop/vivasoft-klikit"
+alias cd-vivasoft-klikit-client="$HOME/Desktop/vivasoft-klikit/client"
+alias cd-vivasoft-klikit-server="$HOME/Desktop/vivasoft-klikit/server"
+alias cd-vivasoft-klikit-server-con="$HOME/Desktop/vivasoft-klikit/server/consumer"
+alias cd-vivasoft-klikit-server-ent="$HOME/Desktop/vivasoft-klikit/server/enterprise"
+alias cd-vivasoft-klikit-infra="$HOME/Desktop/vivasoft-klikit/infra"
+alias cd-vivasoft-klikit-driver="$HOME/Desktop/vivasoft-klikit/driver"
+alias cd-vivasoft-klikit-driver-cvs="$HOME/Desktop/vivasoft-klikit/driver-cvs"
+alias cd-vivasoft-klikit-doc="$HOME/Desktop/vivasoft-klikit/doc"
+alias cd-vivasoft-klikit-db-local="$HOME/Desktop/vivasoft-klikit/docker-db"
 alias cd-home="cd $HOME"
-alias cd-learning="cd $HOME/Desktop/Learning"
+alias cd-learning="cd $HOME/Desktop/learning"
 alias ibfd-test-user="cat $HOME/Desktop/IBFD-KAZ/test-users.json"
 alias azure-test-user="cat $HOME/Desktop/IBFD-KAZ/azure-ad-test-users.json"
 # scripts
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
+alias autoremove="sudo apt autoremove"
+alias autoclean="sudo apt autoclean"
 alias killport='function _killp(){ lsof -nti:$1 | xargs kill -9 };_killp'
 # angular
 alias run-trp-prod-ssl="ng build --prod && mv dist/trp/assets/etc dist/trp/ && http-server dist/trp --port=4200 --proxy https://dev-research.ibfd.org --ssl --cert ssl/server.crt --key ssl/server.key"
@@ -166,12 +195,15 @@ alias run-nerui="ng serve --port=4200 --base-href=/nerui --proxy-config=proxy-co
 # golang
 alias run-go-app="chmod +x run.sh && ./run.sh local"
 alias run-go-app-dev="chmod +x run.sh && ./run.sh dev"
+# alias swagger='docker run --rm -it  --user $(id -u):$(id -g) -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger'
 # git
 alias gbr="git branch"
 alias gps="git push"
 alias gpsm="git push origin master"
+alias gpsd="git push origin develop"
 alias gpl="git pull"
 alias gplm="git pull origin master"
+alias gpld="git pull origin develop"
 alias gplmain="git pull origin main"
 alias gcm="git commit -m"
 alias gcam="git commit -a -m"
@@ -180,14 +212,21 @@ alias gdf="git diff"
 alias gad="git add"
 alias gch="git checkout"
 alias gchm="git checkout master"
+alias gchd="git checkout develop"
 alias gchmain="git checkout main"
+alias glt="git fetch --tag && git tag | tac | head -n 1"
 alias gcb="git checkout -b"
+alias grp="git checkout develop && git push origin develop && git checkout master && git push origin master && git push origin --tags"
+alias gpr="git fetch && git checkout develop && git pull origin develop && git checkout master && git pull origin master && git describe --tags"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias git-ibfd-config="git config user.email shuvojit.saha@kaz.com.bd && git config user.name 'Shuvojit Saha'"
 alias git-self-config="git config user.email shuvojitsahashuvo@gmail.com && git config user.name 'ParthoShuvo'"
-alias git-global-config="git config --global user.email shuvojit.saha@kaz.com.bd && git config --global user.name 'Shuvojit Saha'"
+alias git-global-config="git config --global user.email shuvojit.saha@vivacomcolutions.com && git config --global user.name 'Shuvojit Saha'"
+alias gtaglog="git tag -l --format='%(refname)   %(taggerdate)'"
 alias sping="ping -c 5 www.stackoverflow.com"
 alias gping="ping -c 5 www.google.com"
+# k8
+alias k8ctl-version=kubectl version --client --output=yaml
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/shuvojit/.sdkman"
 [[ -s "/home/shuvojit/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shuvojit/.sdkman/bin/sdkman-init.sh"
@@ -195,7 +234,34 @@ export SDKMAN_DIR="/home/shuvojit/.sdkman"
 alias datagrip="sudo /usr/local/bin/datagrip &"
 # chrome
 alias chrome-cors='google-chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security &'
+alias home=~
+alias k8s-use-dev-context='kubectl config use-context gke_shining-insight-276211_asia-south1_dev-1'
+alias k8s-use-stage-context='kubectl config use-context gke_shining-insight-276211_australia-southeast1-a_staging-1'
+alias k8s-use-prod-context='kubectl config use-context gke_shadowchef-production-app_australia-southeast1-a_prod-1'
+alias k8s-use-minikube='kubectl config use-context minikube'
+alias k8s-show-contexts='kubectl config get-contexts'
+alias k8s-curr-context='kubectl config current-context'
+alias k8s-node='kubectl get nodes'
+alias k8s-pod='kubectl get po -o wide'
+alias k8s-pod-watch='kubectl get po --watch'
+alias k8s-svc='kubectl get svc'
+alias k8s-deployment='kubectl get deployment'
+alias k8s-replicaset='kubectl get replicaset'
+alias k8s-des-po='func _desPo(){ kubectl describe po -n $1 $2};_desPo'
+alias k8s-des-svc='func _desSvc(){ kubectl describe svc -n $1 $2 };_desSvc'
+alias k8s-edit-deployment='function _editDep(){ kubectl edit dep $1};_editDep'
+alias k8s-delete-deployment='function _deleteDep(){ kubectl delete dep $1 };_deleteDep'
+alias k8s-delete-pod='function _deletePo(){ kubectl edit po -n $1 $2 };_deletePo'
+alias k8s-logs='function _logsPo(){ kubectl logs -f -n $1 $2 };_logsPo'
+alias k8s-exec='function _execPo(){ kubectl exec -it -n $1 $2 --bin/bash };_execPo'
+alias klikit-mysql-port-forward='kubectl port-forward -n mysql svc/mysql 3311:3306'
+alias k8s-ns='kubectl get namespace'
 
+alias golint-run='golangci-lint run'
+alias go-swagger='swagger generate spec -o ./swagger.yaml'
+
+alias docker-use-dockerhub='docker login -u parthoshuvo'
+alias docker-use-shadowchef='docker login registry.shadowchef.co -u shuvojit'
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
@@ -207,19 +273,30 @@ alias chrome-cors='google-chrome --args --user-data-dir="/tmp/chrome_dev_test" -
 [[ -f /home/shuvojit/Desktop/Learning/serverless/angularSeo/node_modules/tabtab/.completions/sls.zsh ]] && . /home/shuvojit/Desktop/Learning/serverless/angularSeo/node_modules/tabtab/.completions/sls.zsh
 
 # aws-cli auto-complete
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-compinit
-complete -C '/usr/local/bin/aws_completer' aws
+# autoload bashcompinit && bashcompinit
+# autoload -Uz compinit && compinit
+# compinit
+# complete -C '/usr/local/bin/aws_completer' aws
 
 #AWS CLI
-export AWS_PROFILE=Shuvojit
+# export AWS_PROFILE=Shuvojit
 
 # AWS RDS
-export AWS_RDS_USERNAME=Nirvana
-export AWS_RDS_PASSWORD=hbosNizhas4%
-export AWS_SSH_LOCATION='103.217.111.148/32'
+# export AWS_RDS_USERNAME=Nirvana
+# export AWS_RDS_PASSWORD=hbosNizhas4%
+# export AWS_SSH_LOCATION='103.217.111.148/32'
 
 # EB CLI
-alias update-eb-cli="python aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py"
-export AWS_EB_PROFILE=Shuvojit
+# alias update-eb-cli="python aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py"
+# export AWS_EB_PROFILE=Shuvojit
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/shuvojit/google-cloud-sdk/path.zsh.inc' ]; then . '/home/shuvojit/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/shuvojit/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/shuvojit/google-cloud-sdk/completion.zsh.inc'; fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(goenv init -)"
